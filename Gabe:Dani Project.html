@@ -1,0 +1,63 @@
+
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Counter</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      font-size: 16px;
+      justify-content: flex-start;
+      align-items: center;
+    }
+    .counter-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+  </style>
+</head>
+<body>
+  <h1> Counter </h1>
+  <p>Write the necessary javascript to make this counter work.</p>
+  <p>When someone clicks the " - " button, make the number go down by 1</p>
+  <p>When someone clicks the " + " button, make the counter go up by 1</p>
+
+  <div class="counter-wrapper">
+    <h2 class="counter-count">0</h2>
+    <div class="counter-controls">
+      <button id="subtract-button"> - </button>
+      <button id="add-button"> + </button>
+    </div>
+  </div>
+
+  <script>
+    // Write Code here
+    // Hint 1: you need to grab the buttons using javascript. How you select HTML elements with javascript?
+
+    const subtractButton = document.getElementById("subtract-button");
+    const addButton = document.getElementById("add-button");
+    const counter = document.getElementsByClassName("counter-count");
+    let counterNumber = parseInt(counter[0].innerText);
+
+    addButton.addEventListener("click", () => {  
+        counterNumber = counterNumber + 1;
+        counter[0].innerHTML = counterNumber;
+
+    });
+
+    subtractButton.addEventListener("click", () => {
+        counterNumber = counterNumber - 1;
+        counter[0].innerHTML = counterNumber;
+    });
+
+  </script>
+
+</body>
+</html>
